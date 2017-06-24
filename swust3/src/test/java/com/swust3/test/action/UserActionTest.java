@@ -16,7 +16,6 @@ public class UserActionTest extends JunitBaseActionTest {
 		MockHttpServletResponse response = request("/user/selectByUid", res);
 		System.out.println(response.getContentAsString());
 	}
-
 	@Test
 	public void selectByCondition() throws Exception {
 		// res.put("uid", "1");

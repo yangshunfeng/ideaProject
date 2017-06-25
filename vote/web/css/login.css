@@ -1,0 +1,35 @@
+.style1 {
+	font-size: 14px;
+	font-weight:bold;
+	font-family: "微软雅黑";
+	color:red;
+}
+
+.style2 {
+	font-size: 15px
+}
+
+.div1 {
+	padding-left: 30px;
+	background: url(../img/1.png) 4px no-repeat;
+	background-color: #FFFFFF;
+	width: 140px;
+	height: 25px;
+	line-height: 25px;
+	border: 1px solid #ccc;
+}
+
+.div2 {
+	padding-left: 30px;
+	background: url(../img/2.png) 4px no-repeat;
+	background-color: #FFFFFF;
+	width: 140px;
+	height: 25px;
+	line-height: 25px;
+	border: 1px solid #ccc;
+}
+
+input {
+	border: 0;
+	font-size: 18px;
+}

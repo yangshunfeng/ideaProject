@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7" />
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css"	href="../css/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="../css/icon.css" />
+	<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="../css/basep.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/voteinfobase.css"/>
+</head>
+<body style="padding: 0;">
+	<div id="voteinfoall">
+	</div>
+	<div id="dlg-detail" class="easyui-window" icon="icon-help"  closed="true" style="width:80%;height:500px;padding:5px;background: #fafafa;">
+		<div class="easyui-layout" fit="true">
+			<div region="center" border="false">
+				<div id="dlg-detail-tabs" class="easyui-tabs" fit="true">
+					<div id="dlg-detail-tabs-apply" title="竞选列表">
+						<table id="dlg-detail-tabs-apply-table" class="table table-bordered table-hover table-condensed table-striped">
+					  		<thead>
+						  		<tr>
+						  			<th>用户ID</th>
+						  			<th>用户名</th>
+						  			<th>真实姓名</th>
+						  			<th>学号</th>
+						  			<th>权限</th>
+						  			<th>申请理由</th>
+						  			<th>得票总数</th>
+						  		</tr>
+					  		</thead>
+					  		<tbody id="dlg-detail-tabs-apply-table-tbody">
+							</tbody>
+					  	</table>
+					</div>
+					<div id="dlg-detail-tabs-total" title="柱状图">
+						这是柱状图
+					</div>
+					<div id="dlg-detail-tabs-record" title="投票记录">
+						<table id="dlg-detail-tabs-record-table" class="table table-bordered table-hover table-condensed table-striped">
+					  		<thead>
+						  		<tr>
+						  			<th>用户ID</th>
+						  			<th>用户名</th>
+						  			<th>真实姓名</th>
+						  			<th>学号</th>
+						  			<th>权限</th>
+						  			<th>投给？</th>
+						  			<th>投票理由</th>
+						  		</tr>
+					  		</thead>
+					  		<tbody id="dlg-detail-tabs-record-table-tbody">
+							</tbody>
+					  	</table>
+					</div>
+				</div>
+			</div>
+			<div region="south" border="false" style="text-align:right;height:30px;line-height:30px;">
+				<a href="#" class="easyui-linkbutton" icon="icon-cancel" onclick="javascript:$('#dlg-detail').window('close');return false;">Cancel</a>
+			</div>
+		</div>
+	</div>
+	<div id="dlg-apply" class="easyui-dialog" style="width:400px;height:320px;padding:10px 20px"
+		closed="true" buttons="#dlg-apply-buttons">
+		<form id="fm-apply" method="post">
+			<div>
+				<label>竞选描述:</label>
+				<input id="introduction_apply" name="introduction" class="easyui-textbox" class="fitem" required="true" data-options="multiline:true" style="width:350px;height:180px">
+			</div>
+		</form>
+	</div>
+	<div id="dlg-apply-buttons">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="applyprogram.baseSave()">submit</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg-apply').dialog('close');return false;">Cancel</a>
+	</div>
+	<div id="dlg-record" class="easyui-dialog" style="width:400px;height:320px;padding:10px 20px"
+		closed="true" buttons="#dlg-record-buttons">
+		<form id="fm-record" method="post">
+			<div>
+				<label>请仔细考虑:</label>
+				<select  class="easyui-combobox fitem" required="true" style="width:200px;" id="aim_id">
+				</select>
+			</div>
+			<div>
+				<label>投票理由:</label>
+				<input id="introduction_record" name="introduction" class="easyui-textbox" class="fitem" required="true" data-options="multiline:true" style="width:350px;height:130px">
+			</div>
+		</form>
+	</div>
+	<div id="dlg-record-buttons">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="recordprogram.baseSave()">submit</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg-record').dialog('close');return false;">Cancel</a>
+	</div>
+	<script type="text/javascript" src="../js/jquery-1.10.2.js" ></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.easyui.min.js" ></script>
+	<script type="text/javascript" src="../js/easyui-lang-zh_CN.js" ></script>
+	<script type="text/javascript" src="../js/echarts-all.js"></script>
+	<script type="text/javascript" src="../js/vote.js" ></script>
+	<script>
+		$(document).ready(function(){
+			voteinfoprogram.baseInit();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7" />
+	<link rel="stylesheet" type="text/css"	href="../css/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="../css/icon.css" />
+	<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+</head>
+<body style="padding: 0;">
+	<table id="dg" title="项目列表" style="width:100%;height:-20px"
+		url="../voteinfo/select"
+		toolbar="#toolbar"
+		idField="id"
+		striped = "true"
+		MultiSelect="true" 
+		fitColumns="true" 
+		pagination="true">
+		<thead>
+			<tr>
+				<th field="ck" checkbox="true"></th>
+				<th field="id" width="20" sortable="true">ID</th>
+				<th field="title" width="20" sortable="true">标题</th>
+				<th field="description" width="150">描述</th>
+				<th field="state" width="20" formatter="formatPricestate" sortable="true">投票状态</th>
+				<th field="is_anonymous" width="20" formatter="formatPriceis_anonymous" sortable="true">是否匿名</th>
+			</tr>
+		</thead>
+	</table>
+	<div id="toolbar">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="voteinfoprogram.listNew()">新建</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="voteinfoprogram.listUpdate()">更改</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="voteinfoprogram.listDestroy()">删除</a>
+		&nbsp;&nbsp;&nbsp;&nbsp; 
+		ID: <input class="easyui-textbox" style="width: 100px" id="id" /> 
+		标题: <input class="easyui-textbox" style="width: 100px" id="title" /> 
+		状态: 
+		<select class="easyui-combobox" style="width:100px;" id="state">
+			<option value="">请选择</option>
+			<option value="1">正在申请</option>
+			<option value="2">正在进行</option>
+			<option value="3">已经结束</option>
+		</select>
+		是否匿名: 
+		<select class="easyui-combobox" style="width:100px;" id="is_anonymous">
+			<option value="">请选择</option>
+			<option value="0">实名</option>
+			<option value="1">匿名</option>
+		</select>
+		<a class="easyui-linkbutton" iconCls="icon-search" id="search" onclick="voteinfoprogram.listSearch();">查询</a>
+	</div>
+	<div id="dlg" class="easyui-dialog" style="width:400px;height:320px;padding:10px 20px"
+		closed="true" buttons="#dlg-buttons">
+		<form id="fm" method="post">
+			<div class="fitem">
+				<label>标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题:</label>
+				<input name="title" class="easyui-validatebox" required="true">
+			</div>
+			<div class="fitem">
+				<label>描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述:</label>
+				<input class="easyui-textbox" data-options="multiline:true" required="true" name="description" style="width:300px;height:100px">
+			</div>
+			<div class="fitem">
+				<label>投票状态:</label>
+				<input type="radio" checked="checked" name="state" value="1" />投票未开始
+				<input type="radio" checked="checked" name="state" value="2" />投票进行时
+				<input type="radio" checked="checked" name="state" value="3" />投票已结束
+			</div>
+			<div class="fitem">
+				<label>是否匿名:</label>
+				<input type="radio" checked="checked" name="is_anonymous" value="1" />是
+				<input type="radio" checked="checked" name="is_anonymous" value="0" />否
+			</div>
+		</form>
+	</div>
+	<div id="dlg-buttons">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="voteinfoprogram.listSave()">Save</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">Cancel</a>
+	</div>
+	<script type="text/javascript" src="../js/jquery-1.10.2.js" ></script>
+	<script type="text/javascript" src="../js/jquery.easyui.min.js" ></script>
+	<script type="text/javascript" src="../js/easyui-lang-zh_CN.js" ></script>
+	<script type="text/javascript" src="../js/datagrid-detailview.js"></script>
+	<script type="text/javascript" src="../js/vote.js" ></script>
+	<script>
+		$(document).ready(function(){
+			voteinfoprogram.listInit();
+		});
+	</script>
+</body>
+</html>

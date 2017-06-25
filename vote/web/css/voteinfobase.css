@@ -1,0 +1,94 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.first{
+	box-shadow: 0px 0px 17px #666; 
+	width: 230px;
+	height: 350px;
+	display: block;
+	margin-left: 50px;
+	margin-top: 50px;
+	border-radius: 8px;
+	float: left;
+	white-space: normal;
+	position: relative;
+}
+.first a{
+	font-size: 14px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	margin: 10px;
+}
+.first pre{
+	margin: 0px 10px;
+	line-height: 20px;
+	font-family: "微软雅黑";
+	height: 200px;
+	text-overflow: ellipsis;
+	background-color: #FAFAFA;
+	white-space: pre-wrap; /*css-3*/ 
+	white-space: -moz-pre-wrap; /*Mozilla,since1999*/ 
+	white-space: -pre-wrap; /*Opera4-6*/ 
+	white-space: -o-pre-wrap; /*Opera7*/ 
+	word-wrap: break-word; /*InternetExplorer5.5+*/ 
+}
+#vote_info{
+	width: 210px;
+	height: 50px;
+	margin: 12px auto;
+}
+#vote_info span{
+	width: 210px;
+	height: 25px;
+	display: block;
+}
+#vote_button{
+	width: 122px;
+	margin: 12px auto;
+	margin-right: 10px;
+	position: absolute;
+	top: 300px;
+	right: 6px;
+}
+#vote_button input{
+	width: 55px;
+	height: 30px;
+	border-radius: 6px;
+	text-align: center;
+	line-height: 0px;
+	margin-right: 3px;
+}
+#vote_state{
+	width: 90px;
+	height: 25px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	position: absolute;
+	top: 316px;
+	left: 6px;
+}
+#tab{
+	width: 80%;
+	height: auto;
+	margin: 0px auto;
+	border: 1px solid #EAF2D3;
+	border-collapse: collapse;
+	box-shadow: 0px 0px 8px #A7C942;
+	table-layout:fixed;
+}
+#tab tr th{
+	background-color:#A7C942;
+	color:#ffffff;
+}
+#tab tr td{
+	color:#000000;
+	background-color:#EAF2D3;
+	overflow: hidden;
+}
+.vote{
+	width: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

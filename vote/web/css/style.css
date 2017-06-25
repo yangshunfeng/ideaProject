@@ -1,0 +1,10 @@
+.dataresult
+{
+	padding:4px 2px;
+	font-size:13px;
+	border:#FF0000 solid 1px;
+}
+.col-md-9,.col-md-2{
+	padding-left:0px;
+	padding-right:0px;
+}

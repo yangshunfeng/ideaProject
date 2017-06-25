@@ -11,13 +11,13 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @WebAppConfiguration
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class JunitBaseServiceDaoTest {
-	@Before
-	public void setUp() throws Exception {
-		System.out.println("========== Service Or Dao Test Start ============");
-	}
+    @Before
+    public void setUp() throws Exception {
+        System.out.println("========== Service Or Dao Test Start ============");
+    }
 
-	@After
-	public void tearDown() throws Exception {
-		System.out.println("========== Service Or Dao Test End   ============");
-	}
+    @After
+    public void tearDown() throws Exception {
+        System.out.println("========== Service Or Dao Test End   ============");
+    }
 }

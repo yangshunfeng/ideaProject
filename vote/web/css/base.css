@@ -1,14 +1,16 @@
-*{
-	margin: 0px;
-	padding: 0px;
+* {
+    margin: 0px;
+    padding: 0px;
 }
-#fm .fitem label{
-	font-size: 14px;
-	font-family: "微软雅黑";
+
+#fm .fitem label {
+    font-size: 14px;
+    font-family: "微软雅黑";
 }
-#fm .fitem input{
-	border-radius: 5px;
-	margin-top: 12px;
-	line-height: 18px;
-	font-size: 14px;
+
+#fm .fitem input {
+    border-radius: 5px;
+    margin-top: 12px;
+    line-height: 18px;
+    font-size: 14px;
 }

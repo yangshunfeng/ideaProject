@@ -1,63 +1,70 @@
-body 
-{
-    margin:0 auto;
-    padding:0;
-    font-family : Arial, Verdana, Helvetica, sans-serif;
-    font-size : 12px;
-    width : 100%;
-    color : #222222;
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    width: 100%;
+    color: #222222;
 }
-#wrap
-{
-	width:100%;
-	margin:0 auto;
-}
-#datagrid
-{
-	margin:auto;
-	margin-top:5px;
-	width:98%;
-}
-#datagrid .printtable
-{
-	margin:10px 0;
-	width:550px;
-	font-size:16px;
-	border:#000000 solid 1px;
-	padding:20px;
-	line-height: 30px;
-}
-.PageNext{page-break-after:   always;}
 
-#caddatagrid
-{
-	margin:auto;
-	margin-top:5px;
-	width:98%;
+#wrap {
+    width: 100%;
+    margin: 0 auto;
 }
+
+#datagrid {
+    margin: auto;
+    margin-top: 5px;
+    width: 98%;
+}
+
+#datagrid .printtable {
+    margin: 10px 0;
+    width: 550px;
+    font-size: 16px;
+    border: #000000 solid 1px;
+    padding: 20px;
+    line-height: 30px;
+}
+
+.PageNext {
+    page-break-after: always;
+}
+
+#caddatagrid {
+    margin: auto;
+    margin-top: 5px;
+    width: 98%;
+}
+
 #caddatagrid table {
-	border-width:0;
-	color:#333;
-	width:100%;
-	border-top:1px solid #BBBBBB;
-	}
+    border-width: 0;
+    color: #333;
+    width: 100%;
+    border-top: 1px solid #BBBBBB;
+}
 
 #caddatagrid th, #caddatagrid td {
-	margin:0;
-	padding:8px 5px;
-	font-size:12px;
-	border-bottom:1px solid #BBBBBB;
-	padding-left:20px;
-	width:40px;
-	}
+    margin: 0;
+    padding: 8px 5px;
+    font-size: 12px;
+    border-bottom: 1px solid #BBBBBB;
+    padding-left: 20px;
+    width: 40px;
+}
 
-#caddatagrid .tabletitle{
-	font-size:14px;
-	font-weight:bold;
-	background-color:#FFFFCC;
-	}
-	
-.cadContent:hover
-  {   background-color:#ffffff;   color:#ff0000;}  
-.cadContent   
-  {   background-color:#efefef;   color:#333333;}  
+#caddatagrid .tabletitle {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #FFFFCC;
+}
+
+.cadContent:hover {
+    background-color: #ffffff;
+    color: #ff0000;
+}
+
+.cadContent {
+    background-color: #efefef;
+    color: #333333;
+}

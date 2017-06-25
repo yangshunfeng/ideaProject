@@ -16,15 +16,15 @@ import util.SendJsonUtil;
 
 
 @SuppressWarnings("serial")
-@WebServlet(name=" UserOnline",
-	urlPatterns="/user/online")
-public class UserServletOnline extends BaseServlet{
-	
-	public void service(HttpServletRequest request,HttpServletResponse response) throws IOException{
-		List<User> userlists = OnlineListener.list;
-		Map<String, Object> res = new HashMap<String, Object>();
-		res.put("total", userlists.size());
-		res.put("rows", userlists);
-		SendJsonUtil.send(response, res);
-	}
+@WebServlet(name = " UserOnline",
+        urlPatterns = "/user/online")
+public class UserServletOnline extends BaseServlet {
+
+    public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        List<User> userlists = OnlineListener.list;
+        Map<String, Object> res = new HashMap<String, Object>();
+        res.put("total", userlists.size());
+        res.put("rows", userlists);
+        SendJsonUtil.send(response, res);
+    }
 }

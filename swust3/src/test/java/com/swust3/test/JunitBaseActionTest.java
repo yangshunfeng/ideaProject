@@ -21,40 +21,40 @@ import java.util.Map;
 @WebAppConfiguration
 @ContextConfiguration(locations = "classpath:applicationContext.xml")
 public class JunitBaseActionTest {
-	@Autowired
-	private WebApplicationContext wac;
-	private MockMvc mockMvc;
+    @Autowired
+    private WebApplicationContext wac;
+    private MockMvc mockMvc;
 
-	@Before
-	public void setUp() {
-		mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
-		System.out.println("========== Action Test Start ============");
-	}
+    @Before
+    public void setUp() {
+        mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
+        System.out.println("========== Action Test Start ============");
+    }
 
-	@After
-	public void tearDown() throws Exception {
-		System.out.println("========== Action Test End   ============");
-	}
+    @After
+    public void tearDown() throws Exception {
+        System.out.println("========== Action Test End   ============");
+    }
 
-	private MockHttpServletRequestBuilder requestBuilder(String url,
-			Map<String, String> res) {
-		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
-				.post(url).characterEncoding("UTF-8");
-		for (String key : res.keySet()) {
-			requestBuilder.param(key, res.get(key));
-		}
-		return requestBuilder;
-	}
+    private MockHttpServletRequestBuilder requestBuilder(String url,
+                                                         Map<String, String> res) {
+        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
+                .post(url).characterEncoding("UTF-8");
+        for (String key : res.keySet()) {
+            requestBuilder.param(key, res.get(key));
+        }
+        return requestBuilder;
+    }
 
-	public MockHttpServletResponse request(String url,
-			Map<String, String> res) {
-		MvcResult result;
-		try {
-			result = mockMvc.perform(requestBuilder(url, res)).andReturn();
-			return result.getResponse();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
+    public MockHttpServletResponse request(String url,
+                                           Map<String, String> res) {
+        MvcResult result;
+        try {
+            result = mockMvc.perform(requestBuilder(url, res)).andReturn();
+            return result.getResponse();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

@@ -13,14 +13,14 @@ import util.SendJsonUtil;
 
 
 @SuppressWarnings("serial")
-@WebServlet(name=" UserLogout",
-	urlPatterns="/user/logout")
-public class UserServletLogout extends BaseServlet{
-	
-	public void service(HttpServletRequest request,HttpServletResponse response) throws IOException{
-		clear(request);
-		Map<String, Object> res = new HashMap<String, Object>();
-		res.put("result", 1);
-		SendJsonUtil.send(response, res);
-	}
+@WebServlet(name = " UserLogout",
+        urlPatterns = "/user/logout")
+public class UserServletLogout extends BaseServlet {
+
+    public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        clear(request);
+        Map<String, Object> res = new HashMap<String, Object>();
+        res.put("result", 1);
+        SendJsonUtil.send(response, res);
+    }
 }

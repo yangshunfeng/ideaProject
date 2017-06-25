@@ -1,84 +1,86 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=7" />
-	<link rel="stylesheet" type="text/css"	href="../css/easyui.css" />
-	<link rel="stylesheet" type="text/css" href="../css/icon.css" />
-	<link rel="stylesheet" type="text/css" href="../css/demo.css" />
-	<link rel="stylesheet" type="text/css" href="../css/basep.css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
+    <link rel="stylesheet" type="text/css" href="../css/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/basep.css"/>
 </head>
 <body style="padding: 0;">
-	<table id="dg" title="竞选申请列表" style="width:100%;height:-20px;"
-		url="/vote/apply/select"
-		toolbar="#toolbar"
-		idField="id"
-		striped = "true"
-		MultiSelect="true" 
-		fitColumns="true" 
-		pagination="true">
-		<thead>
-			<tr>
-				<th field="ck" checkbox="true"></th>
-				<th field="id" width="20" sortable="true">ID</th>
-				<th field="vote_id" width="20" sortable="true">项目ID</th>
-				<th field="user_id" width="20" sortable="true">用户ID</th>
-				<th field="introduction" width="150">竞选理由</th>
-				<th field="is_accept" width="20" formatter="formatPriceis_accept" sortable="true">是否通过</th>
-			</tr>
-		</thead>
-	</table>
-	<div id="toolbar">
-		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="applyprogram.listNew();">新建</a>
-		<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="applyprogram.listUpdate()">更改</a>
-		<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="applyprogram.listDestroy()">删除</a>
-		&nbsp;&nbsp;&nbsp;&nbsp; 
-		ID: <input class="easyui-textbox" style="width: 90px" id="id" /> 
-		项目ID: <input class="easyui-textbox" style="width: 90px" id="vote_id" /> 
-		用户ID: <input class="easyui-textbox" style="width: 90px" id="user_id" /> 
-		是否通过: 
-		<select class="easyui-combobox" style="width:100px;" id="is_accept">
-			<option value="">请选择</option>
-			<option value="0">未通过</option>
-			<option value="1">已通过</option>
-		</select>
-		<a class="easyui-linkbutton" iconCls="icon-search" id="search" onclick="applyprogram.listSearch()">查询</a>
-	</div>
-	<div id="dlg" class="easyui-dialog" style="width:400px;height:320px;padding:10px 20px"
-		closed="true" buttons="#dlg-buttons">
-		<form id="fm" method="post">
-			<div>
-				<label>投票项目ID:</label>
-				<input name="vote_id" class="easyui-numberbox" class="fitem" required="true">
-			</div>
-			<div>
-				<label>申&nbsp;请&nbsp;人&nbsp;ID:</label>
-				<input name="user_id" class="easyui-numberbox" class="fitem" required="true">
-			</div>
-			<div>
-				<label>竞选理由:</label>
-				<input name="introduction" class="easyui-textbox" class="fitem" required="true" data-options="multiline:true" style="width:300px;height:100px">
-			</div>
-			<div class="fitem">
-				<label>是否通过:</label>
-				<input type="radio" checked="checked" name="is_accept" value="1" />是
-				<input type="radio" checked="checked" name="is_accept" value="0" />否
-			</div>
-		</form>
-	</div>
-	<div id="dlg-buttons">
-		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="applyprogram.listSave()">Save</a>
-		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">Cancel</a>
-	</div>
-	<script type="text/javascript" src="../js/jquery-1.10.2.js" ></script>
-	<script type="text/javascript" src="../js/jquery.easyui.min.js" ></script>
-	<script type="text/javascript" src="../js/easyui-lang-zh_CN.js" ></script>
-	<script type="text/javascript" src="../js/datagrid-detailview.js"></script>
-	<script type="text/javascript" src="../js/vote.js" ></script>
-	<script>
-		$(document).ready(function(){
-			applyprogram.listInit();
-		});
-	</script>
+<table id="dg" title="竞选申请列表" style="width:100%;height:-20px;"
+       url="/vote/apply/select"
+       toolbar="#toolbar"
+       idField="id"
+       striped="true"
+       MultiSelect="true"
+       fitColumns="true"
+       pagination="true">
+    <thead>
+    <tr>
+        <th field="ck" checkbox="true"></th>
+        <th field="id" width="20" sortable="true">ID</th>
+        <th field="vote_id" width="20" sortable="true">项目ID</th>
+        <th field="user_id" width="20" sortable="true">用户ID</th>
+        <th field="introduction" width="150">竞选理由</th>
+        <th field="is_accept" width="20" formatter="formatPriceis_accept" sortable="true">是否通过</th>
+    </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="applyprogram.listNew();">新建</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="applyprogram.listUpdate()">更改</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="applyprogram.listDestroy()">删除</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    ID: <input class="easyui-textbox" style="width: 90px" id="id"/>
+    项目ID: <input class="easyui-textbox" style="width: 90px" id="vote_id"/>
+    用户ID: <input class="easyui-textbox" style="width: 90px" id="user_id"/>
+    是否通过:
+    <select class="easyui-combobox" style="width:100px;" id="is_accept">
+        <option value="">请选择</option>
+        <option value="0">未通过</option>
+        <option value="1">已通过</option>
+    </select>
+    <a class="easyui-linkbutton" iconCls="icon-search" id="search" onclick="applyprogram.listSearch()">查询</a>
+</div>
+<div id="dlg" class="easyui-dialog" style="width:400px;height:320px;padding:10px 20px"
+     closed="true" buttons="#dlg-buttons">
+    <form id="fm" method="post">
+        <div>
+            <label>投票项目ID:</label>
+            <input name="vote_id" class="easyui-numberbox" class="fitem" required="true">
+        </div>
+        <div>
+            <label>申&nbsp;请&nbsp;人&nbsp;ID:</label>
+            <input name="user_id" class="easyui-numberbox" class="fitem" required="true">
+        </div>
+        <div>
+            <label>竞选理由:</label>
+            <input name="introduction" class="easyui-textbox" class="fitem" required="true"
+                   data-options="multiline:true" style="width:300px;height:100px">
+        </div>
+        <div class="fitem">
+            <label>是否通过:</label>
+            <input type="radio" checked="checked" name="is_accept" value="1"/>是
+            <input type="radio" checked="checked" name="is_accept" value="0"/>否
+        </div>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="applyprogram.listSave()">Save</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-cancel"
+       onclick="javascript:$('#dlg').dialog('close')">Cancel</a>
+</div>
+<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../js/datagrid-detailview.js"></script>
+<script type="text/javascript" src="../js/vote.js"></script>
+<script>
+    $(document).ready(function () {
+        applyprogram.listInit();
+    });
+</script>
 </body>
 </html>
